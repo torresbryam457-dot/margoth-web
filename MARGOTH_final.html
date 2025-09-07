@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MARGOTH</title>
+<style>
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(135deg, #fff0f5, #ffe6f0);
+    color: #333;
+    scroll-behavior: smooth;
+}
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 50px 20px;
+}
+.title {
+    font-size: 48px;
+    color: #d63384;
+    text-align: center;
+    margin-bottom: 50px;
+}
+.text-fragment {
+    font-size: 22px;
+    margin-bottom: 25px;
+    line-height: 1.6;
+}
+.letter {
+    display: none;
+    margin-top: 50px;
+    background: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    font-family: 'Dancing Script', cursive;
+    font-size: 22px;
+    line-height: 1.8;
+}
+.heart {
+    position: fixed;
+    width: 25px;
+    height: 25px;
+    background-color: #ff6f91;
+    transform: rotate(45deg);
+}
+.heart::before, .heart::after {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background-color: #ff6f91;
+    border-radius: 50%;
+}
+.heart::before {
+    top: -12.5px;
+    left: 0;
+}
+.heart::after {
+    left: 12.5px;
+    top: 0;
+}
+.top-left { top: 20px; left: 20px; }
+.top-right { top: 20px; right: 20px; }
+.bottom-left { bottom: 20px; left: 20px; }
+.bottom-right { bottom: 20px; right: 20px; }
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="heart top-left"></div>
+<div class="heart top-right"></div>
+<div class="heart bottom-left"></div>
+<div class="heart bottom-right"></div>
+<div class="container">
+    <h1 class="title">MARGOTH</h1>
+    <div id="text-container"></div>
+    <div class="letter" id="letter">
+        <pre>Un peluchito verde, un dinosaurio se llama Panchito y es para ti.
+
+Una carta especialmente y con mucho amor
+
+Dos manillas que me daban pena decirte que compartamos asi que dásela a quien tu desees compartir :(
+
+Una lampara de tulipanes, para que en la noche te acompañen
+
+Un llaverito de la mitad del mundo :3
+
+La mejor tortuga que veras en tu vida
+
+Una colonia que huele muy bien y se quedara en ti
+
+Una manillita con corona pq eres la Queen
+
+Un dinosaurio mas chiquito, como tu
+
+Un ramito que nunca se marchitara, nunca dejara de estar para ti....
+
+Y bueno un ramo de rosas muy bonito, como alguien muy bonita que conozco.</pre>
+    </div>
+</div>
+<script>
+const texts = [
+"HOLAAAAAAAAAAAAAA jajajajja para que veas que mi titulo no fue gratis y soy una maquina programando",
+"Queria hacer esto para ti para que intentar hacer las cosas diferentes",
+"Por ende...",
+"Que veas que todo esto es con mucho cariño",
+"Y siempre lo sera",
+"Aunque yo note que las cosas en ti fueron cambiando mi estilo y mi manera de verte siempre fue la misma",
+"Estas viendo la version maaaaas ridicula pero que mejor se me da",
+"Porque valoro todo el tiempo que haz estado conmigo a travez de una pantalla o como hoy que pudimos vernos tanto batallando al final se nos dio jajaja",
+"Pero aunque con la salida yo haya notado que las cosas siguen igual con tu cambio repentino de actitud nadie me quita lo feliz que e sido teniendote a mi lado",
+"Imaginando cosas por las",
+"por las mismas ilusionandome solo y que se yo imaginando cosas que no",
+"Hoy fue el tortazo...",
+"Ya que no es nada nuevo ese cambio tan raro en ti estos ultimos 3 meses",
+"Me hubiese gustado no haberlo notado",
+"Pero en ti es muy facil saber cuando las cosas estan bien o estan mal",
+"Por eso aseguro que tu te haz distanciado sin querer, talvez sin notarlo quiza, pensar que todo en tu camino esta bien",
+"Pero yo te digo que no, al menos conmigo, pareciera que lo que menos esperas en el dia es mi mensaje, por eso molestaba mucho jajaja con que aaaaaa me odias y eso",
+"No importa, no es la primera vez por eso aunque notaba eso yo no lo daba por hecho pero es facil darse cuenta porque actuas asi, no te culpo cualquiera lo haria estando en tu posicion",
+"Aun asi me quedo con la mejor version de ti, en la que sin dudar recien te conocia y juro que eres la mujer ideal",
+"Cuando molestabamos con enseñarnos cosas, nadar de espalda, la tecnica del macaco, cuando no habia momento en el que no me decia que tu familia te mojo, cuando me deseabas mucha suerte en las practicas, jugabamos roblox yo estando trabajando jajaja, cuando sin pensarlo me mostrabas cualquier cosa en tu habitacion, tus carcacas, tus uñas, te pelo cortado o pintado, tus uñas, me contabas todo de ti",
+"Eras un libro abierto el cual yo podia escribir",
+"Pero despues de todo te siento mas feliz mas centrada en algo",
+"Al final del dia eso es lo que me importa mas",
+"Nunca dudes de increible que eres, yo no lo hago",
+"Pero lo hare desde lejos... te quiero."
+];
+const container = document.getElementById('text-container');
+const letter = document.getElementById('letter');
+let currentText = 0;
+let currentChar = 0;
+let typing = true;
+function typeWriter() {
+    if(currentText < texts.length) {
+        if(currentChar < texts[currentText].length) {
+            if(!container.children[currentText]) {
+                let div = document.createElement('div');
+                div.className = 'text-fragment';
+                container.appendChild(div);
+            }
+            let div = container.children[currentText];
+            div.textContent += texts[currentText].charAt(currentChar);
+            currentChar++;
+            window.scrollTo(0, document.body.scrollHeight);
+            setTimeout(typeWriter, 30);
+        } else {
+            currentText++;
+            currentChar = 0;
+        }
+    }
+}
+document.addEventListener('click', () => {
+    if(typing) {
+        typeWriter();
+        typing = false;
+    } else if(currentText < texts.length) {
+        let div = document.createElement('div');
+        div.className = 'text-fragment';
+        div.textContent = texts[currentText];
+        container.appendChild(div);
+        currentText++;
+        window.scrollTo(0, document.body.scrollHeight);
+    } else {
+        container.innerHTML = '';
+        letter.style.display = 'block';
+        window.scrollTo(0,0);
+    }
+});
+document.addEventListener('keydown', (e) => {
+    if(e.code === 'Space') {
+        e.preventDefault();
+        document.dispatchEvent(new Event('click'));
+    }
+});
+</script>
+</body>
+</html>
