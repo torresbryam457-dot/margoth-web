@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Margoth ❤️</title>
+<style>
+body{
+  margin:0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background:black;
+  color:white;
+  text-align:center;
+  overflow-x:hidden;
+}
+#intro{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:100vh;
+  font-size:2em;
+  cursor:pointer;
+}
+#textos{
+  display:none;
+  background: radial-gradient(circle, #ffb6c1, #ff69b4);
+  min-height:100vh;
+  padding:2em;
+  font-size:1.3em;
+  color:#222;
+  position:relative;
+}
+.texto{
+  display:none;
+  margin:2em auto;
+  max-width:800px;
+  background: rgba(255,255,255,0.8);
+  padding:1.5em;
+  border-radius:12px;
+  box-shadow:0 4px 10px rgba(0,0,0,0.2);
+}
+#cartaFinal, #cartaExtra{
+  display:none;
+  background:black;
+  color:white;
+  min-height:100vh;
+  padding:3em 2em;
+  overflow-y:auto;
+  text-align:center;
+}
+.carta{
+  max-width:800px;
+  margin:auto;
+  background: rgba(255,255,255,0.1);
+  padding:2em;
+  border-radius:15px;
+  line-height:1.6em;
+  font-size:1.2em;
+  white-space:pre-line;
+}
+.canciones{
+  margin-top:2em;
+  font-size:1.1em;
+}
+.canciones a{
+  margin:0 1em;
+  color:#ff69b4;
+  text-decoration:none;
+  font-weight:bold;
+}
+.emoji{
+  position:fixed;
+  top:-50px;
+  font-size:1.8em;
+  animation: caer 6s linear infinite;
+}
+@keyframes caer{
+  0%{transform:translateY(-50px);opacity:1;}
+  100%{transform:translateY(110vh);opacity:0;}
+}
+#extraBtn{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  background:#ff69b4;
+  color:white;
+  padding:10px 15px;
+  border-radius:8px;
+  cursor:pointer;
+  display:none;
+  font-weight:bold;
+}
+.cornerHeart{
+  position:fixed;
+  font-size:2em;
+}
+#tl{top:10px; left:10px;}
+#tr{top:10px; right:10px;}
+#bl{bottom:10px; left:10px;}
+#br{bottom:10px; right:10px;}
+</style>
+</head>
+<body>
+
+<div id="intro">clicks clicks clicks</div>
+
+<div id="textos">
+  <div id="tl" class="cornerHeart">💖</div>
+  <div id="tr" class="cornerHeart">💖</div>
+  <div id="bl" class="cornerHeart">💖</div>
+  <div id="br" class="cornerHeart">💖</div>
+</div>
+
+<div id="cartaFinal">
+  <div class="carta">
+Chimuelita bonita, no eres una mala persona mucho menos alguien que puedan odiar, eres perfecta, de pies a cabeza y si alguien no lo puede ver dile que les presto mis lentes, no culpes a tu cabecita por hacer cosas o incluso dejar de hacer cosas que simplemente no esta en tu manos, que no puedes tener así sea un poco de control estoy seguro que con el tiempo y llegada de nuevas caras eso cambiara pero si cambias algo de ti si me pondré muy mal porque nuevamente tu eres muy increíble y si nadie es perfecto cualquiera nos sale el diablo pero eres de lo mejorcito en esta vida, te soy muy sincero que capaz si no te conocía no lo hubiera hecho nunca, hubieses tomado decisiones de las cuales no estoy orgulloso mencionar, me salvaste sin darte cuenta, entonces te das cuenta como fui de insistente con experiencias pasadas pero no funciono contigo jajaja así que hoy si te digo que te ame mucho y nada de decir "en otra vida quizá" esta es la única y me gusto hacerlo. Respeto tu aislamiento social como forma de lidiar con tus sentimientos, pero reafirmo mi amor como amigo hablándote de todos modos para saber si estas bien o necesitas algo.
+  </div>
+  <div class="canciones">
+    1. <a href="https://youtu.be/23wz86ZbD-o?list=RD23wz86ZbD-o" target="_blank">🎵 Escucha esta canción</a>
+    2. <a href="https://youtu.be/pHPTDX_vS-4?list=RDpHPTDX_vS-4" target="_blank">🎵 Escucha esta canción</a>
+    3. <a href="https://youtu.be/h_I9xto06A0?list=RDh_I9xto06A0" target="_blank">🎵 Escucha esta canción</a>
+  </div>
+</div>
+
+<div id="cartaExtra">
+  <div class="carta">
+No me arrepiento de nada, quiero que sepas que aunque haya sido escasos nuestros vistamientos, mis ojos... ellos te han tomado muchas fotos y guardado recuerdos, han visto lo bonito que te queda todo, como tienes rojizas las mejillas cuando sonríes, lo lindo que brilla tu pelo con el sol y lo hermoso que es corto, tu orejitas que tienen mas accesorios que oreja jajaja. Todo es bonito en ti. Espero que no llores con este detalle no me lo perdonaría si fuera así, tus ojitos deben brillar de lo bonitos que son no por lagrimas, bien no podía terminar este detalle que aunque te e dedicado varias canciones estas no pueden faltar. ❤️
+  </div>
+  <div class="canciones">
+    1. <a href="https://youtu.be/CJr8am6pZco?list=RDCJr8am6pZco" target="_blank">🎵 Escucha esta canción</a>
+    2. <a href="https://youtu.be/TpVsxv_tMb8?list=RDTpVsxv_tMb8" target="_blank">🎵 Escucha esta canción</a>
+  </div>
+</div>
+
+<div id="extraBtn">Click aquí</div>
+
+<script>
+const intro = document.getElementById("intro");
+const textosDiv = document.getElementById("textos");
+const cartaFinal = document.getElementById("cartaFinal");
+const cartaExtra = document.getElementById("cartaExtra");
+const extraBtn = document.getElementById("extraBtn");
+
+const textos = [
+"HOLAAAAAAAAAAAAAA jajajajja para que veas que mi titulo no fue gratis y soy una maquina programando",
+"Queria hacer esto para ti para que intentar hacer las cosas diferentes",
+"Por ende...",
+"Que veas que todo esto es con mucho cariño",
+"Y siempre lo sera",
+"Aunque yo note que las cosas en ti fueron cambiando mi estilo y mi manera de verte siempre fue la misma",
+"Estas viendo la version maaaaas ridicula pero que mejor se me da",
+"Porque valoro todo el tiempo que haz estado conmigo sin pensar en que haya sido en persona o frente a una pantalla",
+"Sin embargo creo que noto que las cosas siguen igual con tu cambio repentino de actitud nadie me quita lo feliz que e sido teniéndote a mi lado",
+"Imaginando cosas",
+"por las",
+"por las mismas ilusionandome solo y que se yo imaginando cosas que no",
+"Hoy fue el tortazo...",
+"Ya que no es nada nuevo ese cambio tan raro en ti estos ultimos 3 meses",
+"Me hubiese gustado no haberlo notado",
+"Pero en ti es muy facil saber cuando las cosas estan bien o estan mal",
+"Por eso aseguro que tu te haz distanciado sin querer, talvez sin notarlo quiza, pensar que todo en tu camino esta bien",
+"Pero yo te digo que no, al menos conmigo, pareciera que lo que menos esperas en el dia es mi mensaje, por eso molestaba mucho jajaja con que aaaaaa me odias y eso",
+"No importa, no es la primera vez por eso aunque notaba eso yo no lo daba por hecho pero es facil darse cuenta porque actuas asi, no te culpo cualquiera lo haria estando en tu posicion",
+"Aun asi me quedo con la mejor version de ti, en la que sin dudar recien te conocia y juro que eres la mujer ideal",
+"Cuando molestabamos con enseñarnos cosas, nadar de espalda, la tecnica del macaco, cuando no habia momento en el que no me decia que tu familia te mojo, cuando me deseabas mucha suerte en las practicas, jugabamos roblox yo estando trabajando jajaja, cuando sin pensarlo me mostrabas cualquier cosa en tu habitacion, tus carcacas, tus uñas, te pelo cortado o pintado, tus uñas, me contabas todo de ti",
+"Eras un libro abierto el cual yo podia escribir",
+"Pero despues de todo te siento mas feliz mas centrada en algo",
+"Al final del dia eso es lo que me importa mas",
+"Nunca dudes de increible que eres, yo no lo hago",
+"Pero lo seguire haciendo desde lejos... te quiero mucho."
+];
+
+let index=0;
+
+intro.addEventListener("click", startTextos);
+document.body.addEventListener("keydown",(e)=>{if(e.code==="Space") startTextos();});
+
+function startTextos(){
+  if(intro.style.display!=="none"){
+    intro.style.display="none";
+    textosDiv.style.display="block";
+    lanzarLluvia(["🌸","🌺","💖","💗","💞"]);
+  }else if(index<textos.length){
+    mostrarTexto();
+  }
+}
+
+function mostrarTexto(){
+  const div = document.createElement("div");
+  div.className="texto";
+  div.textContent=textos[index];
+  textosDiv.innerHTML="";
+  textosDiv.appendChild(div);
+  div.style.display="block";
+  index++;
+  if(index===textos.length){
+    setTimeout(()=>{textosDiv.style.display="none"; cartaFinal.style.display="block"; lanzarLluvia(["✨","🌟","💫"]); extraBtn.style.display="block";},500);
+  }
+}
+
+extraBtn.addEventListener("click",()=>{
+  cartaFinal.style.display="none";
+  extraBtn.style.display="none";
+  cartaExtra.style.display="block";
+  lanzarLluvia(["✨","🌟","💫"]);
+});
+
+function lanzarLluvia(emojis){
+  setInterval(()=>{
+    const emoji=document.createElement("div");
+    emoji.className="emoji";
+    emoji.textContent=emojis[Math.floor(Math.random()*emojis.length)];
+    emoji.style.left=Math.random()*100+"vw";
+    emoji.style.animationDuration=(3+Math.random()*5)+"s";
+    document.body.appendChild(emoji);
+    setTimeout(()=>emoji.remove(),8000);
+  },200);
+}
+</script>
+
+</body>
+</html>
